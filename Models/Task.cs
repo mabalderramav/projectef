@@ -25,7 +25,7 @@ public class Task
     public virtual Category Category { get; set; }
 
     [NotMapped]
-    public string Sumary { get; set; }
+    public string Summary { get; set; }
 }
 
 public enum Priority
