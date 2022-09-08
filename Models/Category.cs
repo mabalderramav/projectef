@@ -12,5 +12,7 @@ public class Category
 
     public string Description { get; set; }
 
+    public int Weight { get; set; }
+
     public virtual ICollection<Task> Categories { get; set; }
 }
