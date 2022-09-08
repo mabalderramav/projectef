@@ -1,0 +1,18 @@
+# Verify if Entity Framework is installed
+dotnet ef
+
+# Command in order to install tool of EF
+dotnet tool install --global dotnet-ef
+
+## Migration
+# Each migration should has a descriptive name.
+dotnet ef migrations add InitialCreate
+
+# Command in order to install EF Design.
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.5
+
+# Uninstalls the Microsoft.EntityFrameworkCore.Design package from the default project
+dotnet remove package Microsoft.EntityFrameworkCore.Design
+
+# Database update.
+dotnet ef database update
