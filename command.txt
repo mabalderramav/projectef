@@ -1,3 +1,6 @@
+# Online GUID / UUID Generator
+https://www.guidgenerator.com/
+
 # Verify if Entity Framework is installed
 dotnet ef
 
