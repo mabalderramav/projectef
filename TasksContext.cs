@@ -65,7 +65,7 @@ public class TasksContext : DbContext
             task.ToTable("Task");
             task.HasKey(t => t.TaskId);
             task.HasOne(t => t.Category)
-                .WithMany(c => c.Categories)
+                .WithMany(c => c.Task)
                 .HasForeignKey(t => t.CategoryId);
             task.Property(t => t.Title)
                 .IsRequired()

@@ -1,7 +1,7 @@
 namespace projectef.Models;
 
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 [Table("Category")]
 public class Category
@@ -14,5 +14,6 @@ public class Category
 
     public int Weight { get; set; }
 
-    public virtual ICollection<Task> Categories { get; set; }
+    [JsonIgnore]
+    public virtual ICollection<Task> Task { get; set; }
 }
