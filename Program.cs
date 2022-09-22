@@ -51,5 +51,20 @@ async ([FromServices] TasksContext dbContext, [FromBody] projectef.Models.Task t
     return Results.NotFound();
 });
 
+app.MapDelete("/api/tasks/{id}",
+async ([FromServices] TasksContext dbContext, [FromRoute] Guid id) =>
+{
+    var taskActual = dbContext.Tasks.Find(id);
+    if (taskActual != null)
+    {
+        dbContext.Remove(taskActual);
+        await dbContext.SaveChangesAsync();
+
+        return Results.Ok();
+    }
+
+    return Results.NotFound();
+});
+
 
 app.Run();
